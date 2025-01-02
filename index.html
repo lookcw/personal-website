@@ -1,0 +1,70 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        a {
+            color: rgb(34 211 238);
+            transition: color 300ms;
+        }
+
+        a:hover {
+            color: rgb(103 232 249);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Title Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-cyan-950">
+    <!-- Title Card / Nav Container -->
+    {% include title-card.html %}
+    <div class="relative">
+
+        <!-- About Me -->
+        {% include what-i-believe.html %}
+
+
+        <!-- Experience -->
+        {% include experience.html %}
+
+        <!-- Projects -->
+        {% include projects.html %}
+    </div>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function () {
+            lucide.createIcons();
+        });
+
+        // Handle scroll behavior
+        const titleCard = document.getElementById('titleCard');
+        const navBreakpoint = 10; // Adjust this value to change when the transform happens
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > navBreakpoint) {
+                titleCard.classList.add('nav-fixed');
+                titleCard.querySelector('.container').classList.remove('py-8');
+                titleCard.querySelector('.container').classList.add('py-4');
+                titleCard.querySelector('h1').classList.remove('text-4xl');
+                titleCard.querySelector('h1').classList.add('text-2xl');
+            } else {
+                titleCard.classList.remove('nav-fixed');
+                titleCard.querySelector('.container').classList.remove('py-4');
+                titleCard.querySelector('.container').classList.add('py-8');
+                titleCard.querySelector('h1').classList.remove('text-2xl');
+                titleCard.querySelector('h1').classList.add('text-4xl');
+            }
+        });
+    </script>
+</body>
+
+</html>

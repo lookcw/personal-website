@@ -1,0 +1,19 @@
+{
+  "books": [
+    {
+      "title": "The Happiness Advantage",
+      "author": "Shawn Achor",
+      "description": "The book that changed how I prioritize everything in my life. I aim to be happier and healthier so I can be more productive. Only when I am happiness can I bring more into the world.",
+    },
+    {
+      "title": "Lean Startup",
+      "author": "Eric Ries",
+      "description": "A startup fundamental, The book that changed how I think about building. Building is about learning and validating hypotheses."
+    },
+    {
+      "title": "The Innovator's Dilemma",
+      "author": "Clayton M. Christensen",
+      "description": "A classic business book. Christensen asserts that incumbents chase higher and higher revenues, ignoring the needs of emerging markets. Messing with the status quo means cannibalizing profits, thus startups are best positioned to disrupt the market."
+    }
+  ]
+}

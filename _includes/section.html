@@ -1,0 +1,10 @@
+<section>
+    <h2>My Projects</h2>
+    {% for book in site.data.books.books %}
+        {% include book-card.html 
+            title=book.title 
+            description=book.description 
+            url=book.url 
+            %}
+    {% endfor %}
+</section> 
