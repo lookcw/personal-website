@@ -14,57 +14,133 @@
         a:hover {
             color: rgb(103 232 249);
         }
+
+        .nav-link.active {
+            color: rgb(34 211 238);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            /* background-color: rgb(34 211 238); */
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Title Card</title>
+    <title>Christopher Look</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="bg-cyan-950">
+    {% include navbar.html %}
     <!-- Title Card / Nav Container -->
     {% include title-card.html %}
     <div class="relative">
 
         <!-- About Me -->
-        {% include what-i-believe.html %}
+        <section id="beliefs">
+
+            {% include what-i-believe.html %}
+        </section>
 
 
         <!-- Experience -->
-        {% include experience.html %}
-
+        <section id="experience">
+            {% include experience.html %}
+        </section>
         <!-- Projects -->
-        {% include projects.html %}
+        <section id="projects">
+            {% include projects.html %}
+        </section>
+        <!-- Books -->
+        <section id="books">
+            {% include books.html %}
+        </section>
     </div>
     </main>
 
     <script>
-        // Initialize Lucide icons
+
         document.addEventListener('DOMContentLoaded', function () {
             lucide.createIcons();
-        });
+            const nav = document.getElementById('mainNav');
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
 
-        // Handle scroll behavior
-        const titleCard = document.getElementById('titleCard');
-        const navBreakpoint = 10; // Adjust this value to change when the transform happens
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const navHeight = document.querySelector('nav').offsetHeight; // Get nav height
+                        const targetPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = targetPosition + window.scrollY - navHeight;
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > navBreakpoint) {
-                titleCard.classList.add('nav-fixed');
-                titleCard.querySelector('.container').classList.remove('py-8');
-                titleCard.querySelector('.container').classList.add('py-4');
-                titleCard.querySelector('h1').classList.remove('text-4xl');
-                titleCard.querySelector('h1').classList.add('text-2xl');
-            } else {
-                titleCard.classList.remove('nav-fixed');
-                titleCard.querySelector('.container').classList.remove('py-4');
-                titleCard.querySelector('.container').classList.add('py-8');
-                titleCard.querySelector('h1').classList.remove('text-2xl');
-                titleCard.querySelector('h1').classList.add('text-4xl');
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Update nav visibility and active link on scroll
+            function updateNavigation() {
+                const scrollPosition = window.scrollY;
+                const viewportHeight = window.innerHeight;
+                const windowHeight = window.innerHeight;
+
+                // Show/hide nav based on scroll position
+                if (scrollPosition > viewportHeight * 0.5) {
+                    nav.classList.remove('-translate-y-full');
+                    nav.classList.add('translate-y-0');
+                } else {
+                    nav.classList.remove('translate-y-0');
+                    nav.classList.add('-translate-y-full');
+                }
+
+                // Find the current section by checking which one is most visible
+                let mostVisibleSection = null;
+                let maxVisibleHeight = 0;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+
+                    if (visibleHeight > maxVisibleHeight) {
+                        maxVisibleHeight = visibleHeight;
+                        mostVisibleSection = section;
+                    }
+                });
+
+                // Update active link based on most visible section
+                if (mostVisibleSection) {
+                    const currentId = mostVisibleSection.id;
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
             }
-        });
-    </script>
+
+            // Handle scroll events with throttling
+            let isScrolling;
+            window.addEventListener('scroll', () => {
+                clearTimeout(isScrolling);
+                isScrolling = setTimeout(updateNavigation, 50);
+            });
+
+            // Initial check
+            updateNavigation();
+        });</script>
 </body>
 
 </html>

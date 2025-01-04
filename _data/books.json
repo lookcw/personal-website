@@ -3,17 +3,74 @@
     {
       "title": "The Happiness Advantage",
       "author": "Shawn Achor",
-      "description": "The book that changed how I prioritize everything in my life. I aim to be happier and healthier so I can be more productive. Only when I am happiness can I bring more into the world.",
+      "image": "assets/images/books-copy/resized-happiness-advantage.jpg",
+      "description": "The book that changed how I prioritize everything in my life. I am to be happier and healthier so I can bring more of that into the world."
+    },
+    {
+      "title": "Recoding America",
+      "author": "Jennifer Pahlka",
+      "image": "assets/images/books-copy/resized-recoding-america.jpg",
+      "description": "My favorite book in the last few years. Pahlka expertly describes how government culture, not the individuals, fails the American people and how to fix it."
     },
     {
       "title": "Lean Startup",
       "author": "Eric Ries",
-      "description": "A startup fundamental, The book that changed how I think about building. Building is about learning and validating hypotheses."
+      "image": "assets/images/books-copy/resized-lean-startup.jpg",
+      "description": "A startup fundamental, Ries argues that building is about learning and validating hypotheses. Now I recognize that building without learning is a waste for a startup."
     },
     {
       "title": "The Innovator's Dilemma",
       "author": "Clayton M. Christensen",
-      "description": "A classic business book. Christensen asserts that incumbents chase higher and higher revenues, ignoring the needs of emerging markets. Messing with the status quo means cannibalizing profits, thus startups are best positioned to disrupt the market."
+      "image": "assets/images/books-copy/resized-the-innovators-dilemma.jpg",
+      "description": "A classic business book. Christensen asserts that incumbents chase higher and higher revenues, ignoring the needs of emerging markets. Startups therefore are best positioned to disrupt the market."
+    },
+    {
+      "title": "No Rules Rules",
+      "author": "Reid Hoffman",
+      "image": "assets/images/books-copy/resized-no-rules-rules.jpg",
+      "description": "A book about how to build a culture of innovation. Hoffman argues that freedom and responsibility foster more innovation than a process and controls."
+    },
+    {
+      "title": "The Mom Test",
+      "author": "Rob Fitzpatrick",
+      "image": "assets/images/books-copy/resized-the-mom-test.jpg",
+      "description": "A must read for any entrepreneur. Fitzpatrick, an engineer, teaches you how to validate your idea before you build it."
+    },
+    {
+      "title": "What you do is who you are",
+      "author": "Anthony Horowitz",
+      "image": "assets/images/books-copy/resized-what-you-do-is-who-you-are.jpg",
+      "description": "A book that describes culture as the sum of the behaviors of the people in the organization. Leaders must be aware their actions will be emulated."
+    },
+    {
+      "title": "Good to Great",
+      "author": "Jim Collins",
+      "image": "assets/images/books-copy/resized-good-to-great.jpg",
+      "description": "Jim Collins describes his studies on what differentiates great companies from good ones. It starts with having the right people along with a culture of discipline."
+    },
+    {
+      "title": "An American Sickness",
+      "author": "Elisabeth Rosenthal",
+      "image": "assets/images/books-copy/resized-an-american-sickness.jpg",
+      "description": "Rosenthal lists many examples of the misaligned incentives in the Healthcare industry. While I agree with many of the problems, I think innovation will come from new business models rather than policy."
+    },
+    {
+      "title": "The Innovator's Prescription",
+      "author": "Clayton M. Christensen",
+      "image": "assets/images/books-copy/resized-innovators-prescription.jpg",
+      "description": "From the author of The Innovator's Dilemma, this book is nearly a textbook on how to lower costs and create efficiency in healthcare. It is the best argument for value-based care I have read."
+    },
+    {
+      "title": "Hacking Growth",
+      "author": "Sean Ellis",
+      "image": "assets/images/books-copy/resized-hacking-growth.jpg",
+      "description": "An essential for any entrepreneuer who sells d2c. Ellis teaches a framework for rapidly testing and iterating on growth levers. Jared Flamm used this at Blueberry and saved the company from running out of cash."
+    },
+    {
+      "title": "Where Does It Hurt?",
+      "author": "Jonathan Bush",
+      "image": "assets/images/books-copy/resized-where-does-it-hurt.jpg",
+      "description": "A book targeted towards entrepreneurs describing where the problems are in healthcare, and what founders can do to solve them."
     }
   ]
 }
