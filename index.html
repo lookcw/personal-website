@@ -132,6 +132,19 @@
 
             // Initial check
             updateNavigation();
-        });</script>
+        });
+        
+        function scrollWithOffset(elementId, offset) {
+            const element = document.getElementById(elementId);
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+    </script>
 
 </html>
